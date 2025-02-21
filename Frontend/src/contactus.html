@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <!-- DaisyUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #c8e8e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar bg-white shadow-md fixed top-0 left-0 w-full z-50 text-lg">
+    <div class="w-full flex justify-between items-center px-8">
+  
+      <a href="index.html" class="btn btn-ghost normal-case text-xl">
+        <img src="/img/yoga.svg" alt="HPE Logo" class="h-8" />
+        <span class="ml-2 text-blue-900 text-3xl text-opacity-80 font-semibold">FlexAI</span> <!-- Deep blue text -->
+      </a>
+      <!-- Main Navbar -->
+      <nav class=" text-lg flex items-center space-x-6 ">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="text-gray-700 hover:text-blue-700">Home</a></li>
+          <li><a href="about.html" class="text-gray-700 hover:text-blue-700">About Us</a></li>
+          <li><a href="blog.html" class="text-gray-700 hover:text-blue-700">Blog</a></li>
+          <li><a href="contact.html" class="text-gray-700 hover:text-blue-700">Contact</a></li>
+        </ul>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </nav>
+    </div>
+  </header>
+
+      <!-- Right Side (Contact Form) -->
+      <div >
+        <h2 class="topic-text text-2xl font-bold text-blue-900 mb-4">Send us a message</h2>
+        <p class="text-gray-600 mb-6">
+          Suggest us about the application and let us know if you have a hard time
+          understanding the functionalities.
+        </p>
+        <form id="contact-form" class="space-y-4">
+          <div class="input-box">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              required
+            />
+          </div>
+          <div class="input-box message-box">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="button">
+            <button
+              type="submit"
+              class="w-full bg-blue-900 text-white py-3 px-6 rounded-lg hover:bg-blue-800 transition duration-300"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = form.elements["name"].value;
+      const email = form.elements["email"].value;
+      const message = form.elements["message"].value;
+
+      fetch("http://localhost:5000/email/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Email sent successfully");
+          } else {
+            alert("Error sending email");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Error sending email");
+        });
+    });
+  </script>
+</body>
+</html>

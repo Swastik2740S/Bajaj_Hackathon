@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexAI</title>
+  <link rel="icon" type="image/x-icon" href="./img/ai.svg" />
+  <!-- DaisyUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #abb1bd; /* Dark gray text */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+    }
+    .navbar a:hover, .navbar .active, .navbar li:hover > a {
+      color: #4299e1; /* Deep blue for hover and active links */
+    }
+    .btn-primary {
+      background-color: #2b6cb0; /* Deep blue */
+      border-color: #2b6cb0;
+    }
+    .btn-primary:hover {
+      background-color: #3182ce; /* Lighter blue on hover */
+      border-color: #3182ce;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <!-- Header -->
+  <header class="navbar bg-white shadow-md top-0 z-50 text-lg ">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="index.html" class="btn btn-ghost normal-case text-xl">
+        <img src="/img/yoga.svg" alt="HPE Logo" class="h-8" />
+        <span class="ml-2 text-blue-900 text-3xl text-opacity-80 font-semibold">FlexAI</span> <!-- Deep blue text -->
+      </a>
+      <!-- Main Navbar -->
+      <nav class=" text-lg flex items-center space-x-6 ">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="text-gray-700 hover:text-blue-700">Home</a></li>
+          <li><a href="about.html" class="text-gray-700 hover:text-blue-700">About Us</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-700">Blog</a></li>
+          <li><a href="contact.html" class="text-gray-700 hover:text-blue-700">Contact</a></li>
+        </ul>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero min-h-screen bg-cover bg-center" style="background-image: url('img/gym.jpg');">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">Welcome to <span class="text-blue-300">FlexAI</span></h1>
+        <p class="mb-5 text-lg from-accent-content">Number one Human Pose Estimation and Fitness App</p>
+        <a href="#about" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class=" container mx-auto px-4 py-16 ">
+    <!-- About Section -->
+    <section id="about" class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex justify-center">
+          <img src="/img/g3.jpg" alt="HPE Logo" class="w-80  h-60 object-cover" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-white">Personalized Fitness Application for Staying Healthy</h2>
+          <p class="mb-4 text-white">
+            Our program combines cutting-edge computer vision techniques to concentrate on Human Pose Estimation. 
+            It entails precisely identifying from video data the locations and orientations of a person's bodily joints. 
+            We do this by using a cutting-edge deep learning model called MoveNet that was created exclusively for real-time 
+            pose estimation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customizable Workout Section -->
+    <section class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex justify-center">
+          <img src="/img/g2.jpg" alt="Fitness Icon" class="w-80  h-60 object-cover" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-white">Customizable Workout Plans for All Fitness Levels</h2>
+          <p class="mb-4 text-white">
+            Individuals with varied degrees of fitness might benefit from customizable training regimens, which offer 
+            individualized exercise routines for each person's particular requirements. These strategies take into account 
+            things like fitness objectives, current fitness level, free time, and preferences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex justify-center">
+          <img src="/img/g1.jpg" alt="Instructions Icon" class="w-80  h-60 object-cover" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-white">Detailed Exercise Instructions and Videos</h2>
+          <p class="mb-4 text-white">
+            AI-enabled gym apps provide thorough coaching options for a range of exercise categories. These applications offer 
+            consumers real-time direction and feedback by utilizing AI algorithms. To make sure exercises are done correctly and 
+            safely, they assess user movements and compare them to ideal form.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex justify-center">
+          <img src="/img/g4.jpg" alt="Progress Tracking Icon" class="w-80  h-60 object-cover" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-white">Progress Tracking and Analytics</h2>
+          <p class="mb-4 text-white">
+            Our AI fitness tracking tool provides in-depth analysis of workout duration and frequency as well as multiple graph 
+            kinds for performance evaluation. The software keeps track of how long users exercise for, enabling them to monitor 
+            their progress and establish new goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="card bg-white shadow-md">
+          <div class="card-body">
+            <i class="fas fa-dumbbell text-4xl mb-4 text-blue-900"></i>
+            <h3 class="card-title text-blue-900">Squats</h3>
+            <p class="text-gray-700">Squats are a compound exercise that works multiple muscle groups including the glutes, quads, and hamstrings.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-md">
+          <div class="card-body">
+            <i class="fas fa-running text-4xl mb-4 text-blue-900"></i>
+            <h3 class="card-title text-blue-900">Push Ups</h3>
+            <p class="text-gray-700">Push ups are a bodyweight exercise that primarily work the chest, shoulders, and triceps.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-md">
+          <div class="card-body">
+            <i class="fas fa-heartbeat text-4xl mb-4 text-blue-900"></i>
+            <h3 class="card-title text-blue-900">Jumping Jacks</h3>
+            <p class="text-gray-700">Jumping jacks are a cardio exercise that works the entire body, including the legs, arms, and core.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-md">
+          <div class="card-body">
+            <i class="fas fa-dumbbell text-4xl mb-4 text-blue-900"></i>
+            <h3 class="card-title text-blue-900">Dumbbell High Curls</h3>
+            <p class="text-gray-700">Dumbbell high curls are an isolation exercise that specifically target the bicep muscles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer p-8 bg-blue-900 text-white">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold">FlexAI</h3>
+          <p>Rajpura<br />Punjab, India<br />Phone: +91 99999xxxxx<br />Email: flexai@email.xx</p>
+          <div class="flex gap-4 mt-4">
+            <a href="#" class="btn btn-circle btn-outline btn-sm"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-outline btn-sm"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-outline btn-sm"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Useful Links</h3>
+          <ul class="menu">
+            <li><a href="#" class="text-white hover:text-blue-200">Home</a></li>
+            <li><a href="#" class="text-white hover:text-blue-200">About Us</a></li>
+            <li><a href="#" class="text-white hover:text-blue-200">Services</a></li>
+            <!-- <li><a href="#" class="text-white hover:text-blue-200">Terms of Service</a></li> -->
+            <!-- <li><a href="#" class="text-white hover:text-blue-200">Privacy Policy</a></li> -->
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Our Services</h3>
+          <ul class="menu">
+            <li><a href="#" class="text-white hover:text-blue-200">Gym Classes</a></li>
+            <li><a href="#" class="text-white hover:text-blue-200">Activity Tracker</a></li>
+            <li><a href="#" class="text-white hover:text-blue-200">Diet Recommendation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Contact Us</h3>
+          <p></p>
+          <ul class="menu">
+            <li class="text-white"></li>
+            <li class="text-white">flexai@email.xx</li>
+            <li class="text-white">flexai@email.xx</li>
+            <li class="text-white">flexai@email.xx</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="btn btn-circle btn-primary fixed bottom-4 right-4">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+</body>
+</html>
