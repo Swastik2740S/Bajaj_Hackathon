@@ -40,10 +40,22 @@ export default function Dashboard() {
     router.push("/login");
   };
 
-  const updateWorkout = (exercise) => {
-    console.log(`User performed: ${exercise}`);
-    // TODO: Add API call to record the workout
-  };
+  const updateWorkout = ({ exercise }) => {
+  const router = useRouter(); // Next.js client-side navigation
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Ensure localStorage is available
+      const storedData = JSON.parse(localStorage.getItem("DBWOSettings")) || {};
+      localStorage.setItem(
+        "DBWOSettings",
+        JSON.stringify({ ...storedData, currWorkout: exercise })
+      );
+
+      // Redirect to temp.html (replace with Next.js route if needed)
+      router.push("/temp");
+    }
+  }, [exercise]);}
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -79,7 +91,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Squats Card */}
           <div className="bg-gray-800 shadow-md rounded-lg overflow-hidden">
-            <img src="/img/squats.gif" alt="Squats" className="w-full h-48 object-cover" />
+            <img src="/img/squats.gif" alt="Squats" className="w-180 h-160  object-cover" />
             <div className="p-6">
               <h2 className="text-xl font-bold text-blue-400">Squats</h2>
               <p className="mt-2 text-gray-300">
@@ -100,7 +112,7 @@ export default function Dashboard() {
 
           {/* Push-Ups Card */}
           <div className="bg-gray-800 shadow-md rounded-lg overflow-hidden">
-            <img src="/img/pushups.gif" alt="Push-Ups" className="w-full h-48 object-cover" />
+            <img src="/img/pushups.gif" alt="Push-Ups" className="w-full h-50 object-cover" />
             <div className="p-6">
               <h2 className="text-xl font-bold text-blue-400">Push-Ups</h2>
               <p className="mt-2 text-gray-300">
