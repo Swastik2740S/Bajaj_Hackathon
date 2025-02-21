@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import LogNav from "../components/lognav";
 
 export default function Home() {
   const [exercises, setExercises] = useState([]);
@@ -30,26 +31,7 @@ export default function Home() {
   return (
     <div className="bg-black min-h-screen text-white">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-blue-900 py-4 shadow-lg z-50">
-        <div className="container mx-auto flex items-center justify-between px-6">
-          <h1 className="text-2xl font-bold text-white">KeepFit</h1>
-          <nav className="flex gap-6">
-            <a href="/dashboard" className="text-white hover:text-gray-300">Exercises</a>
-            <a href="/user_activity" className="text-white hover:text-gray-300">Activities</a>
-            <a href="/bmi" className="text-white hover:text-gray-300">Diet Plan</a>
-            <a href="/user_activity_graph" className="text-white hover:text-gray-300">Activity Graphs</a>
-            <button 
-              className="bg-red-600 px-4 py-2 rounded hover:bg-red-800"
-              onClick={() => {
-                localStorage.removeItem("token");
-                window.location.href = "/";
-              }}
-            >
-              Logout
-            </button>
-          </nav>
-        </div>
-      </header>
+      <LogNav/>
 
       {/* Main Content */}
       <main className="container mx-auto pt-24 px-6">

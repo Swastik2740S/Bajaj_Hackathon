@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
 import "tailwindcss/tailwind.css";
+import Lognav from "../components/lognav";
 
 export default function Dashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -60,31 +61,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-gray-900 shadow-md py-4 px-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-blue-400">
-          <Link href="/">KeepFit</Link>
-        </h1>
-        <nav className="flex space-x-6">
-          <Link href="/dashboard" className="text-blue-400 hover:underline">
-            Exercises
-          </Link>
-          <Link href="/user_activity" className="text-blue-400 hover:underline">
-            Activities
-          </Link>
-          <Link href="/bmi" className="text-blue-400 hover:underline">
-            Diet Plan Generator
-          </Link>
-          <Link href="/user_activity_graph" className="text-blue-400 hover:underline">
-            Activity Graphs
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-          >
-            Logout
-          </button>
-        </nav>
-      </header>
+      <Lognav/>
 
       {/* Main Content */}
       <div className="container mx-auto mt-24 p-4">
