@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Leaderboard = require('../models/leaderboardSchema');
+const Leaderboard = require('../models/LeaderboardSchema')
 
 // GET leaderboard (sorted by score)
 router.get('/', async (req, res) => {

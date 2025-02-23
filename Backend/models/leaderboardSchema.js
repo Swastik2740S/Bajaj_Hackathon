@@ -16,27 +16,28 @@ const LeaderboardSchema = new mongoose.Schema({
   }
 });
 
-// Function to update leaderboard
-LeaderboardSchema.statics.updateLeaderboard = async function () {
-  const User = mongoose.model('User'); // Fetch User model
+// // Function to update leaderboard
+// LeaderboardSchema.statics.updateLeaderboard = async function () {
+//   const User = mongoose.model('User'); // Fetch User model
 
-  const users = await User.find();
+//   const users = await User.find();
 
-  for (const user of users) {
-    let totalRepetitions = 0;
+//   for (const user of users) {
+//     let totalRepetitions = 0;
 
-    user.workouts.forEach(workout => {
-      totalRepetitions += workout.repetition;
-    });
+//     user.workouts.forEach(workout => {
+//       totalRepetitions += workout.repetition;
+//     });
 
-    const score = totalRepetitions * 5;
+//     const score = totalRepetitions * 5;
 
-    await this.findOneAndUpdate(
-      { emailId: user.emailId },
-      { totalRepetitions, score },
-      { upsert: true, new: true }
-    );
-  }
-};
+//     await this.findOneAndUpdate(
+//       { emailId: user.emailId },
+//       { totalRepetitions, score },
+//       { upsert: true, new: true }
+//     );
+//   }
+// };
 
-module.exports = mongoose.model('Leaderboard', LeaderboardSchema);
+module.exports = mongoose.models.Leaderboard || mongoose.model('Leaderboard', LeaderboardSchema);
+
